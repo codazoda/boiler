@@ -7,16 +7,16 @@ In the future, _Boiler_ will download it's templates from a public website. We'l
 
 ## Examples
 
-A few examples of templates that are built-in to this first version.
+A few examples of commands to show specific templates.
 
 ```
-$boiler html
+boiler html
 
-$boiler go
+boiler go
 
-$boiler go/http
+boiler go/http
 
-$boiler license/mit
+boiler license/mit
 ```
 
 Create an `index.html` file using the `html` template.
