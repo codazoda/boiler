@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	templateDir := "~/broiler/template/"
+	templateDir := "~/boiler/template/"
 	// If it's set, use an environment variable as the template directory
 	if os.Getenv("BOILER") != "" {
 		templateDir = os.Getenv("BOILER")
@@ -52,7 +52,7 @@ func cat(fname string) {
 
 // Output the program syntax
 func showSyntax() {
-	fmt.Println("Broiler v1.0.0")
+	fmt.Println("Boiler v1.0.0")
 	fmt.Println("Syntax: boiler [template]")
 	os.Exit(1)
 }
