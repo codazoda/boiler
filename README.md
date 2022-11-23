@@ -2,9 +2,7 @@
 
 Boiler is an application that automatically prints basic boiler plate code that you can copy and paste into your project.
 
-:Screenshot Goes Here:
-
-Boiler downloads it's templates from a public website and uses GitHub for contributing to the project. In a future version you'll be able to use your own URL as an additonal template repository.
+In the future, Boiler will download it's templates from a public website. We'll use GitHub for contributing to the project. You'll also be able to use your own URL as an additonal template repository.
 
 
 ## Examples
@@ -15,14 +13,27 @@ $boiler go
 $boiler go/http
 
 $boiler go/https
+
+$boiler html
+
+$boiler license/mit
 ```
 
 
-## Roadmap
+## Installing
+
+Clone this repo, build boiler for your platform, then copy (or symlink) the binary into your bin directory. You'll need Go installed to compile. After you have the code just run the following two commands to build and copy.
+
+```
+go build boiler.go
+cp boiler /usr/local/bin/boiler
+```
 
 
-### Adding a Path
+## Template Paths
 
-You can create your own templates by putting them online then adding a boiler environment variable.
+The default template path is `~/boiler/template/`. You can put your own templates there or you can change the path by creating a `BOILER` environment variable. Your template directory must end in a slash.
 
-boiler=https://example.com/boiler
+```
+export BOILER=/some/template/path/
+```

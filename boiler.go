@@ -9,11 +9,11 @@ import (
 
 func main() {
 	templateDir := "~/broiler/template/"
+	// If it's set, use an environment variable as the template directory
 	if os.Getenv("BOILER") != "" {
 		templateDir = os.Getenv("BOILER")
 	}
 	var templateFile string
-	// TODO: Use an environment variable as the template directory
 	// Make sure there is only one command line argument
 	argLength := len(os.Args[1:])
 	if argLength != 1 {
