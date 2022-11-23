@@ -52,7 +52,7 @@ func cat(fname string) {
 
 // Output the program syntax
 func showSyntax() {
-	fmt.Println("Boiler v1.0.0")
+	fmt.Println("Boiler v1.0.2")
 	fmt.Println("Syntax: boiler [template]")
 	os.Exit(1)
 }
