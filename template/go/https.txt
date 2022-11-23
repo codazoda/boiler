@@ -1,0 +1,40 @@
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+)
+
+type application struct {
+	config struct {
+		port string
+		path string
+		cert string
+		key  string
+	}
+}
+
+func main() {
+	// Setup some application data
+	app := new(application)
+	app.config.port = "443"
+	app.config.path = "./www"
+	app.config.cert = "localhost.crt"
+	app.config.key = "localhost.key"
+	// Setup a file server to serve the www directory
+	fileServer := http.FileServer(http.Dir(app.config.path))
+	http.Handle("/", fileServer)
+	// Routes
+	http.HandleFunc("/hello", app.helloHandler)
+	// Start a server
+	fmt.Printf("Server started on port %s\n", app.config.port)
+	if err := http.ListenAndServeTLS(":"+app.config.port, app.config.cert, app.config.key, nil); err != nil {
+		fmt.Println(err)
+	}
+}
+
+func (app *application) helloHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("content-type", "text/html")
+	io.WriteString(w, "Hello World.\n")
+}
