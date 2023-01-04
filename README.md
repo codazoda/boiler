@@ -2,6 +2,8 @@
 
 _Boiler_ is an application that automatically prints basic boilerplate code that you can copy and paste into your project.
 
+This was written in one of my early live coding episodes [Making a Command-Line Tool for Boilerplate Code in Go - S1 E5](https://youtu.be/csRkQg4XzuE).
+
 In the future, _Boiler_ will download it's templates from a public website. We'll use GitHub for contributing to the project. You'll also be able to use your own URL as an additonal template repository.
 
 
