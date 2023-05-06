@@ -1,0 +1,19 @@
+FROM golang:1.19-alpine AS builder
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY . .
+
+RUN GOOS=linux GOARCH=amd64 go build -o service . && echo "Build Success"
+
+FROM scratch
+
+COPY --from=builder /app /app
+
+WORKDIR /app
+
+EXPOSE 80
+
+ENTRYPOINT [ "./service" ]
