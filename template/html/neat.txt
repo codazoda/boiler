@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Example</title>
+
+    <link rel="stylesheet" type="text/css" href="neat.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+</body>
+
+    <a class="home" href="/">&nwarr;</a>
+
+    <h1>Example Page</h1>
+
+    <p>Example text...</p>
+
+    <ul>
+        <li><a href="another.html">Another Page</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2 id="about">About</h2>
+
+    <img src="https://neat.joeldare.com/images/neat-screenshot.png" class="bordered">
+    
+    <p>About this website...</p>
+
+</html>

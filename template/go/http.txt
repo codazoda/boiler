@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 )
 
-const port = "8080"
-
 func main() {
+	port := getServerPort()
 	fileServer := http.FileServer(http.Dir("./www"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/search", searchHandler)
@@ -21,4 +21,12 @@ func main() {
 func searchHandler(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query().Get("q")
 	io.WriteString(w, "Searched for "+query+"\n")
+}
+
+func getServerPort() string {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	return port
 }

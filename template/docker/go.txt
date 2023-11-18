@@ -1,3 +1,6 @@
+# Build: docker build --no-cache --tag example .
+# Run:   docker run --name example -p 127.0.0.1:8080:8080/tcp example
+
 FROM golang:alpine AS builder
 
 RUN mkdir /app

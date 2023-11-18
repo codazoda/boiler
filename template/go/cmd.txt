@@ -1,0 +1,43 @@
+package main
+
+import (
+	"flag"
+	"fmt"
+	"os"
+)
+
+func main() {
+
+	// Setup the command line arguments we accept
+	someFeature := flag.Bool("b", false, "A boolean option")
+	someSetting := flag.String("s", "", "A string option")
+
+	// Parse the command line and grab the first non-flag command-line argument
+	flag.Parse()
+	argument := flag.Arg(0)
+
+	// If no question was asked, provide help output
+	if len(argument) < 1 {
+		showSyntax()
+	}
+
+	// If the someFeature flag was present, say so
+	if *someFeature {
+		fmt.Println("Enabled someFeature")
+	}
+
+	// If the someSetting flag was present, say so
+	if *someSetting != "" {
+		fmt.Printf("someSetting is %s\n", *someSetting)
+	}
+
+	fmt.Printf("The first non-flag: %v\n", argument)
+
+}
+
+func showSyntax() {
+	fmt.Println("Usage: cmd [options] \"argument\"")
+	fmt.Println("Options:")
+	flag.PrintDefaults()
+	os.Exit(0)
+}
