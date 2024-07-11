@@ -34,7 +34,7 @@ Clone this repo, build _Boiler_ for your platform, then copy (or symlink) the bi
 
 ```
 go build boiler.go
-cp boiler /usr/local/bin/boiler
+sudo cp boiler /usr/local/bin/
 ```
 
 
