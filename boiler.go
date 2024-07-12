@@ -8,16 +8,19 @@ import (
 )
 
 func main() {
-	templateDir := "~/boiler/template/"
+	templateDir := ""
 	// If it's set, use an environment variable as the template directory
 	if os.Getenv("BOILER") != "" {
 		templateDir = os.Getenv("BOILER")
+	} else {
+		fmt.Println("Error: Set the BOILER environment variable to your template path.")
+		os.Exit(1)
 	}
 	var templateFile string
 	// Make sure there is only one command line argument
 	argLength := len(os.Args[1:])
 	if argLength != 1 {
-		showSyntax()
+		showSyntax(templateDir)
 	}
 	// Grab the first command line argument
 	template := os.Args[1]
@@ -30,10 +33,10 @@ func main() {
 		_, err := os.Stat(templateFile)
 		if os.IsNotExist(err) {
 			fmt.Printf("Error: Template file not found (%s)\n", templateFile)
-			os.Exit(1) // TODO: Fix exit code
+			os.Exit(1)
 		}
 	}
-	// TODO: Output the file
+	// Output the file
 	cat(templateFile)
 }
 
@@ -51,8 +54,12 @@ func cat(fname string) {
 }
 
 // Output the program syntax
-func showSyntax() {
-	fmt.Println("Boiler v1.0.2")
+func showSyntax(templateDir string) {
+	indexFile := templateDir + "index.txt"
+	fmt.Println("Boiler v1.1")
 	fmt.Println("Syntax: boiler [template]")
+	fmt.Println()
+	fmt.Println("Templates:")
+	cat(indexFile)
 	os.Exit(1)
 }
