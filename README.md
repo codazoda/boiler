@@ -38,7 +38,7 @@ sudo cp boiler /usr/local/bin/
 
 ## Template Paths
 
-The default template path is `~/boiler/template/`. You can put your own templates there or you can change the path by creating a `BOILER` environment variable. Your template directory must end in a slash.
+You must set a `BOILER` environment variable to your template directory and your template directory must end in a slash.
 
 ```
 export BOILER=/some/template/path/
