@@ -1,0 +1,6 @@
+# Build: docker build --tag my-alpine-shell .
+# Run:   docker run -it --rm my-alpine-shell
+
+FROM alpine:latest
+
+CMD ["sh"]
