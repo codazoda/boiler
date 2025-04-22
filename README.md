@@ -2,7 +2,7 @@
 
 _Boiler_ is an application that automatically prints basic boilerplate code that you can copy and paste into your project.
 
-![Boiler CLI Examples](image/boiler.gif)
+![Boiler CLI Examples](docs/image/boiler.gif)
 
 In the future, _Boiler_ may download it's templates from a public website. When we do that we'll use GitHub for contributing to the project. You should also be able to use your own URL as an additonal template repository.
 
