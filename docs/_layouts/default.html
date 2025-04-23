@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="neat.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel="canonical" href="{{ page.url | remove: '.html' | absolute_url }}">
+
+</head>
+
+<body>
+
+    {{ content }}
+
+    <div id="footer">
+        <hr>
+
+        <p class="center">Boiler © Dare Companies Dotcom LLC</p>
+
+        <p class="center"><a href="terms">Terms</a> - <a href="privacy">Privacy</a></p>
+    </div>
+
+    <script src="https://counter.joeldare.com/counter.js" async></script>
+
+    <!-- Updated March 16, 2025 -->
+
+</body>
+
+</html>
