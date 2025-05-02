@@ -38,6 +38,15 @@ sudo cp boiler /usr/local/bin/
 ```
 
 
+## List Templates
+
+Template lists are a template themselves. Running `boiler list` will show you the `list/main.txt` template. Running `boiler list/tf` will show you the `list/tf.txt` file, and so on. You can organize your templates however you like.
+
+```
+boiler list
+```
+
+
 ## Template Paths
 
 You must set a `BOILER` environment variable to your template directory and your template directory must end in a slash.

@@ -55,11 +55,7 @@ func cat(fname string) {
 
 // Output the program syntax
 func showSyntax(templateDir string) {
-	indexFile := templateDir + "index.txt"
-	fmt.Println("Boiler v1.1")
+	fmt.Println("Boiler v1.2")
 	fmt.Println("Syntax: boiler [template]")
-	fmt.Println()
-	fmt.Println("Templates:")
-	cat(indexFile)
 	os.Exit(1)
 }
